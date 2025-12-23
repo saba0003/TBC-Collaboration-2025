@@ -1,4 +1,4 @@
-package com.example.tbc_collaboration_2025.data.mapper
+package com.example.tbc_collaboration_2025.data.remote.mapper
 
 import com.example.tbc_collaboration_2025.domain.common.Resource
 import com.example.tbc_collaboration_2025.domain.common.Resource.*

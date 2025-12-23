@@ -1,4 +1,4 @@
-package com.example.tbc_collaboration_2025.data.common
+package com.example.tbc_collaboration_2025.data.remote.common
 
 import com.example.tbc_collaboration_2025.domain.common.Resource
 import com.example.tbc_collaboration_2025.domain.error.AppError.*

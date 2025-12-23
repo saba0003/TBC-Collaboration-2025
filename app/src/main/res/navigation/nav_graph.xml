@@ -2,11 +2,48 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navGraph"
-    app:startDestination="@id/templateFragment">
+    app:startDestination="@id/createAccountFragment">
 
     <fragment
-        android:id="@+id/templateFragment"
-        android:name="com.example.tbc_collaboration_2025.presentation.screen.template.TemplateFragment"
-        android:label="Template Screen" />
+        android:id="@+id/createAccountFragment"
+        android:name="com.example.tbc_collaboration_2025.presentation.screen.sign_up.SignUpFragment"
+        android:label="Create Account Screen" >
+        <action
+            android:id="@+id/action_createAccountFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_createAccountFragment_to_eventHubFragment"
+            app:destination="@id/eventHubFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.tbc_collaboration_2025.presentation.screen.sign_in.SignInFragment"
+        android:label="Sign In Screen" >
+        <action
+            android:id="@+id/action_signInFragment_to_eventHubFragment"
+            app:destination="@id/eventHubFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.tbc_collaboration_2025.presentation.screen.forgot_password.ForgotPasswordFragment"
+        android:label="Forgot Password Screen" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventHubFragment"
+        android:name="com.example.tbc_collaboration_2025.presentation.screen.event_hub.EventHubFragment"
+        android:label="Event Hub Screen" >
+        <action
+            android:id="@+id/action_eventHubFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
 
 </navigation>

@@ -1,7 +1,7 @@
 package com.example.tbc_collaboration_2025.di.modules
 
 import com.example.tbc_collaboration_2025.BuildConfig.BASE_URL
-import com.example.tbc_collaboration_2025.BuildConfig.API_VERSION
+import com.example.tbc_collaboration_2025.BuildConfig.API
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -41,7 +41,7 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit =
         Retrofit.Builder()
-            .baseUrl(BASE_URL.plus(other = API_VERSION))
+            .baseUrl(BASE_URL.plus(other = API))
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(okHttpClient)
             .build()

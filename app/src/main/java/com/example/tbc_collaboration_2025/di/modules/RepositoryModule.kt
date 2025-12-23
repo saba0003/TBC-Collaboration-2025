@@ -1,8 +1,8 @@
 package com.example.tbc_collaboration_2025.di.modules
 
-import com.example.tbc_collaboration_2025.data.repository.TemplateRemoteRepositoryImpl
+import com.example.tbc_collaboration_2025.data.repository.SignUpRepositoryImpl
 import com.example.tbc_collaboration_2025.di.qualifiers.RemoteRepository
-import com.example.tbc_collaboration_2025.domain.repository.TemplateRepository
+import com.example.tbc_collaboration_2025.domain.repository.SignUpRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -16,6 +16,6 @@ interface RepositoryModule {
     @Binds
     @Singleton
     @RemoteRepository
-    fun bindTemplateRemoteRepository(impl: TemplateRemoteRepositoryImpl): TemplateRepository
+    fun bindSignUpRepository(impl: SignUpRepositoryImpl): SignUpRepository
 
 }

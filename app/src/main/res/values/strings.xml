@@ -7,6 +7,11 @@
     <string name="error_state">Application state error.</string>
     <string name="error_unknown">An unknown error occurred: No details available.</string>
 
+    <!-- VALIDATION ERRORS -->
+    <string name="error_invalid_email">Invalid Email!</string>
+    <string name="error_weak_password">Password must be at least 8 characters with uppercase, lowercase, and number!</string>
+    <string name="error_empty_fields">All fields must be filled in!</string>
+
     <string name="create_account">Create Account</string>
     <string name="enter_your_details_to_get_started">Enter your details to get started.</string>
     <string name="first_name_label">First Name</string>
@@ -25,11 +30,10 @@
     <string name="select_department_option_hint">Select Department</string>
     <string name="password_label">Password</string>
     <string name="create_password_input_hint">Create password</string>
-    <string name="password_constraints">Password must be at least 8 characters with uppercase, lowercase, and number.</string>
     <string name="confirm_password_label">Confirm Password</string>
     <string name="confirm_password_input_hint">Confirm password</string>
     <string name="terms_and_policy">I agree to the Terms of Service and Privacy</string>
-    <string name="already_have_an_account_sign_in">Already have an account? Sign in</string>
+    <string name="already_have_an_account_sign_in">Already have an account? <annotation key="action" value="sign_in"><b><u>Sign in</u></b></annotation></string>
     <string name="sign_in">Sign In</string>
     <string name="enter_your_credentials_to_access_your_account">Enter your credentials to access your account</string>
     <string name="enter_your_email_input_hint">Enter your email</string>
@@ -40,4 +44,5 @@
     <string name="enter_your_email_and_we_will_send_you_a_link_to_reset_your_password">Enter your email and we\'ll send you a link to reset your password.</string>
     <string name="send_reset_link">Send Reset Link</string>
     <string name="back_to_sign_in">Back to Sign In</string>
+    <string name="sign_out">Sign out</string>
 </resources>

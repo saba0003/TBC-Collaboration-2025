@@ -329,17 +329,6 @@
             app:srcCompat="@drawable/ic_question_mark" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/passwordConstraintsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/nimbus_sans"
-            android:text="@string/password_constraints"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="@id/passwordEditText"
-            app:layout_constraintStart_toStartOf="@id/passwordEditText"
-            app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
-
-        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/confirmPasswordTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -347,7 +336,7 @@
             android:fontFamily="@font/nimbus_sans"
             android:text="@string/confirm_password_label"
             app:layout_constraintStart_toStartOf="@id/confirmPasswordEditText"
-            app:layout_constraintTop_toBottomOf="@id/passwordConstraintsTextView" />
+            app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/confirmPasswordEditText"
@@ -375,17 +364,6 @@
             app:layout_constraintTop_toTopOf="@id/confirmPasswordTextView"
             app:srcCompat="@drawable/ic_question_mark" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/confirmPasswordConstraintsTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/nimbus_sans"
-            android:text="@string/password_constraints"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="@id/confirmPasswordEditText"
-            app:layout_constraintStart_toStartOf="@id/confirmPasswordEditText"
-            app:layout_constraintTop_toBottomOf="@id/confirmPasswordEditText" />
-
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/agreeToTermsAndPrivacyCheckBox"
             android:layout_width="wrap_content"
@@ -394,7 +372,7 @@
             android:fontFamily="@font/nimbus_sans"
             android:text="@string/terms_and_policy"
             app:layout_constraintStart_toStartOf="@id/confirmPasswordEditText"
-            app:layout_constraintTop_toBottomOf="@id/confirmPasswordConstraintsTextView" />
+            app:layout_constraintTop_toBottomOf="@id/confirmPasswordEditText" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/createAccountButton"

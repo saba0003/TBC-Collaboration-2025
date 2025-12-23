@@ -1,6 +1,6 @@
 package com.example.tbc_collaboration_2025.di.modules
 
-import com.example.tbc_collaboration_2025.data.remote.service.TemplateService
+import com.example.tbc_collaboration_2025.data.remote.service.SignUpService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +14,7 @@ object ServiceModule {
 
     @Provides
     @Singleton
-    fun provideTemplateService(retrofit: Retrofit): TemplateService =
-        retrofit.create(TemplateService::class.java)
+    fun provideSignUpService(retrofit: Retrofit): SignUpService =
+        retrofit.create(SignUpService::class.java)
 
 }
