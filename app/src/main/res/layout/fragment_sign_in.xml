@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="32dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/signInTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/nimbus_sans"
+        android:lineHeight="34sp"
+        android:text="@string/sign_in"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/enterYourDetailsToGetStartedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/nimbus_sans"
+        android:lineHeight="20sp"
+        android:text="@string/enter_your_credentials_to_access_your_account"
+        android:textColor="@color/gray_1"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/signInTextView"
+        app:layout_constraintStart_toStartOf="@id/signInTextView"
+        app:layout_constraintTop_toBottomOf="@id/signInTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/emailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/nimbus_sans"
+        android:lineHeight="20sp"
+        android:text="@string/email_label"
+        android:textColor="@color/gray_2"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/emailEditText"
+        app:layout_constraintTop_toBottomOf="@id/enterYourDetailsToGetStartedTextView" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/emailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text_border"
+        android:fontFamily="@font/nimbus_sans"
+        android:hint="@string/enter_your_email_input_hint"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/passwordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/nimbus_sans"
+        android:text="@string/password_label"
+        app:layout_constraintStart_toStartOf="@id/passwordEditText"
+        app:layout_constraintTop_toBottomOf="@id/emailEditText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/edit_text_border"
+        android:fontFamily="@font/nimbus_sans"
+        android:hint="@string/enter_your_password_input_hint"
+        android:inputType="textPassword"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintEnd_toEndOf="@id/emailEditText"
+        app:layout_constraintStart_toStartOf="@id/emailEditText"
+        app:layout_constraintTop_toBottomOf="@id/passwordTextView" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/rememberMeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/nimbus_sans"
+        android:text="@string/remember_me"
+        app:layout_constraintStart_toStartOf="@id/passwordEditText"
+        app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forgotPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/forgot_password"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="@id/rememberMeCheckBox"
+        app:layout_constraintEnd_toEndOf="@id/passwordEditText"
+        app:layout_constraintTop_toTopOf="@id/rememberMeCheckBox" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signInButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/bg_button_black"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/passwordEditText"
+        app:layout_constraintStart_toStartOf="@id/passwordEditText"
+        app:layout_constraintTop_toBottomOf="@id/rememberMeCheckBox" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/signUpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/nimbus_sans"
+        android:text="@string/do_not_have_an_account_sign_up"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@id/signInButton"
+        app:layout_constraintStart_toStartOf="@id/signInButton"
+        app:layout_constraintTop_toBottomOf="@id/signInButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

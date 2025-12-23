@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/createAccountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:lineHeight="34sp"
+            android:text="@string/create_account"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/enterYourDetailsToGetStartedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:lineHeight="20sp"
+            android:text="@string/enter_your_details_to_get_started"
+            android:textColor="@color/gray_1"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/createAccountTextView"
+            app:layout_constraintStart_toStartOf="@id/createAccountTextView"
+            app:layout_constraintTop_toBottomOf="@id/createAccountTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/firstNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:lineHeight="20sp"
+            android:text="@string/first_name_label"
+            android:textColor="@color/gray_2"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/firstNameEditText"
+            app:layout_constraintTop_toBottomOf="@id/enterYourDetailsToGetStartedTextView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/firstNameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edit_text_border"
+            android:fontFamily="@font/nimbus_sans"
+            android:hint="@string/first_name_input_hint"
+            android:inputType="text"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintEnd_toStartOf="@id/lastNameEditText"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstNameTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lastNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nimbus_sans"
+            android:lineHeight="20sp"
+            android:text="@string/last_name_label"
+            android:textColor="@color/gray_2"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/lastNameEditText"
+            app:layout_constraintTop_toTopOf="@id/firstNameTextView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/lastNameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/edit_text_border"
+            android:fontFamily="@font/nimbus_sans"
+            android:hint="@string/last_name_input_hint"
+            android:inputType="text"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/firstNameEditText"
+            app:layout_constraintTop_toTopOf="@id/firstNameEditText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/emailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:lineHeight="20sp"
+            android:text="@string/email_label"
+            android:textColor="@color/gray_2"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/emailEditText"
+            app:layout_constraintTop_toBottomOf="@id/firstNameEditText" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/emailEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_border"
+            android:fontFamily="@font/nimbus_sans"
+            android:hint="@string/email_input_hint"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintEnd_toEndOf="@id/lastNameEditText"
+            app:layout_constraintStart_toStartOf="@id/firstNameEditText"
+            app:layout_constraintTop_toBottomOf="@id/emailTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phoneNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:lineHeight="20sp"
+            android:text="@string/phone_number_label"
+            android:textColor="@color/gray_2"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/phoneNumberEditText"
+            app:layout_constraintTop_toBottomOf="@id/emailEditText" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/phoneNumberEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edit_text_border"
+            android:fontFamily="@font/nimbus_sans"
+            android:hint="@string/phone_number_input_hint"
+            android:inputType="phone"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintEnd_toStartOf="@id/sendOtpButton"
+            app:layout_constraintStart_toStartOf="@id/emailEditText"
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sendOtpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/send_otp"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="@id/phoneNumberEditText"
+            app:layout_constraintEnd_toEndOf="@id/emailEditText"
+            app:layout_constraintStart_toEndOf="@id/phoneNumberEditText"
+            app:layout_constraintTop_toTopOf="@id/phoneNumberEditText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/enterOtpCodeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/enter_otp_code_label"
+            app:drawableStartCompat="@drawable/ic_shield"
+            app:layout_constraintStart_toStartOf="@id/digit1TextView"
+            app:layout_constraintTop_toBottomOf="@id/phoneNumberEditText" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/otpCodeEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nimbus_sans"
+            android:inputType="number"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/enterOtpCodeTextView"
+            app:layout_constraintTop_toBottomOf="@id/enterOtpCodeTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/digit1TextView"
+            style="@style/OtpBox"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nimbus_sans"
+            app:layout_constraintEnd_toStartOf="@id/digit2TextView"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@id/phoneNumberEditText"
+            app:layout_constraintTop_toBottomOf="@id/enterOtpCodeTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/digit2TextView"
+            style="@style/OtpBox"
+            android:fontFamily="@font/nimbus_sans"
+            app:layout_constraintBottom_toBottomOf="@id/digit1TextView"
+            app:layout_constraintEnd_toStartOf="@id/digit3TextView"
+            app:layout_constraintStart_toEndOf="@id/digit1TextView"
+            app:layout_constraintTop_toTopOf="@id/digit1TextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/digit3TextView"
+            style="@style/OtpBox"
+            android:fontFamily="@font/nimbus_sans"
+            app:layout_constraintBottom_toBottomOf="@id/digit2TextView"
+            app:layout_constraintEnd_toStartOf="@id/digit4TextView"
+            app:layout_constraintStart_toEndOf="@id/digit2TextView"
+            app:layout_constraintTop_toTopOf="@id/digit2TextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/digit4TextView"
+            style="@style/OtpBox"
+            android:fontFamily="@font/nimbus_sans"
+            app:layout_constraintBottom_toBottomOf="@id/digit3TextView"
+            app:layout_constraintEnd_toStartOf="@id/digit5TextView"
+            app:layout_constraintStart_toEndOf="@id/digit3TextView"
+            app:layout_constraintTop_toTopOf="@id/digit3TextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/digit5TextView"
+            style="@style/OtpBox"
+            android:fontFamily="@font/nimbus_sans"
+            app:layout_constraintBottom_toBottomOf="@id/digit4TextView"
+            app:layout_constraintEnd_toStartOf="@id/digit6TextView"
+            app:layout_constraintStart_toEndOf="@id/digit4TextView"
+            app:layout_constraintTop_toTopOf="@id/digit4TextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/digit6TextView"
+            style="@style/OtpBox"
+            android:fontFamily="@font/nimbus_sans"
+            app:layout_constraintBottom_toBottomOf="@id/digit5TextView"
+            app:layout_constraintEnd_toEndOf="@id/sendOtpButton"
+            app:layout_constraintStart_toEndOf="@id/digit5TextView"
+            app:layout_constraintTop_toTopOf="@id/digit5TextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/codeExpiresInNSecondsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/code_expires_in_n_seconds_sample"
+            app:layout_constraintStart_toStartOf="@id/digit1TextView"
+            app:layout_constraintTop_toBottomOf="@id/digit1TextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/resendCodeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/resend_code"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="@id/codeExpiresInNSecondsTextView"
+            app:layout_constraintEnd_toEndOf="@id/digit6TextView"
+            app:layout_constraintTop_toTopOf="@id/codeExpiresInNSecondsTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/departmentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/department_label"
+            app:layout_constraintStart_toStartOf="@id/departmentDropdown"
+            app:layout_constraintTop_toBottomOf="@id/codeExpiresInNSecondsTextView" />
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/departmentDropdown"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/dropdown_background"
+            android:clickable="true"
+            android:drawableEnd="@drawable/ic_chevron_down"
+            android:focusable="true"
+            android:fontFamily="@font/nimbus_sans"
+            android:hint="@string/select_department_option_hint"
+            android:inputType="none"
+            android:paddingHorizontal="12dp"
+            android:textColorHint="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@id/digit6TextView"
+            app:layout_constraintStart_toStartOf="@id/digit1TextView"
+            app:layout_constraintTop_toBottomOf="@id/departmentTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/passwordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/password_label"
+            app:layout_constraintStart_toStartOf="@id/passwordEditText"
+            app:layout_constraintTop_toBottomOf="@id/departmentDropdown" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_border"
+            android:fontFamily="@font/nimbus_sans"
+            android:hint="@string/create_password_input_hint"
+            android:inputType="textVisiblePassword"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintEnd_toEndOf="@id/departmentDropdown"
+            app:layout_constraintStart_toStartOf="@id/departmentDropdown"
+            app:layout_constraintTop_toBottomOf="@id/passwordTextView" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/passwordConstraintsImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="@id/passwordTextView"
+            app:layout_constraintEnd_toEndOf="@id/passwordEditText"
+            app:layout_constraintTop_toTopOf="@id/passwordTextView"
+            app:srcCompat="@drawable/ic_question_mark" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/passwordConstraintsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/password_constraints"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/passwordEditText"
+            app:layout_constraintStart_toStartOf="@id/passwordEditText"
+            app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/confirmPasswordTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/confirm_password_label"
+            app:layout_constraintStart_toStartOf="@id/confirmPasswordEditText"
+            app:layout_constraintTop_toBottomOf="@id/passwordConstraintsTextView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/confirmPasswordEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_border"
+            android:fontFamily="@font/nimbus_sans"
+            android:hint="@string/confirm_password_input_hint"
+            android:inputType="textVisiblePassword"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintEnd_toEndOf="@id/passwordEditText"
+            app:layout_constraintStart_toStartOf="@id/passwordEditText"
+            app:layout_constraintTop_toBottomOf="@id/confirmPasswordTextView" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/confirmPasswordConstraintsImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="@id/confirmPasswordTextView"
+            app:layout_constraintEnd_toEndOf="@id/confirmPasswordEditText"
+            app:layout_constraintTop_toTopOf="@id/confirmPasswordTextView"
+            app:srcCompat="@drawable/ic_question_mark" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/confirmPasswordConstraintsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/password_constraints"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/confirmPasswordEditText"
+            app:layout_constraintStart_toStartOf="@id/confirmPasswordEditText"
+            app:layout_constraintTop_toBottomOf="@id/confirmPasswordEditText" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/agreeToTermsAndPrivacyCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/terms_and_policy"
+            app:layout_constraintStart_toStartOf="@id/confirmPasswordEditText"
+            app:layout_constraintTop_toBottomOf="@id/confirmPasswordConstraintsTextView" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/createAccountButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_button_black"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/create_account"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/confirmPasswordEditText"
+            app:layout_constraintStart_toStartOf="@id/confirmPasswordEditText"
+            app:layout_constraintTop_toBottomOf="@id/agreeToTermsAndPrivacyCheckBox" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/signInTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/nimbus_sans"
+            android:text="@string/already_have_an_account_sign_in"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@id/createAccountButton"
+            app:layout_constraintStart_toStartOf="@id/createAccountButton"
+            app:layout_constraintTop_toBottomOf="@id/createAccountButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
