@@ -27,9 +27,21 @@ android {
     buildTypes {
         debug {
             isMinifyEnabled = true
-            buildConfigField(type = "String", name = "BASE_URL", value = "\"https://mocki.io/\"")
-            buildConfigField(type = "String", name = "API_VERSION", value = "\"v1/\"")
-            buildConfigField(type = "String", name = "ENDPOINT", value = "\"models\"")
+            buildConfigField(type = "String", name = "BASE_URL", value = "\"http://34.140.203.230/register/\"")
+            buildConfigField(type = "String", name = "API", value = "\"api/\"")
+            buildConfigField(type = "String", name = "AUTH", value = "\"auth/\"")
+            buildConfigField(type = "String", name = "REGISTRATIONS", value = "\"registrations/\"")
+            buildConfigField(type = "String", name = "EVENT", value = "\"event/\"")
+            buildConfigField(type = "String", name = "ANALYTICS", value = "\"analytics/\"")
+            buildConfigField(type = "String", name = "USER", value = "\"user\"")
+            buildConfigField(type = "String", name = "EVENTS_ENDPOINT", value = "\"events\"")
+            buildConfigField(type = "String", name = "TYPES_ENDPOINT", value = "\"types\"")
+            buildConfigField(type = "String", name = "SUMMARY_ENDPOINT", value = "\"summary\"")
+            buildConfigField(type = "String", name = "DETAILS_ENDPOINT", value = "\"details\"")
+            buildConfigField(type = "String", name = "EXPORT_ENDPOINT", value = "\"export\"")
+            buildConfigField(type = "String", name = "LOGIN_ENDPOINT", value = "\"login\"")
+            buildConfigField(type = "String", name = "REGISTER_ENDPOINT", value = "\"register\"")
+            buildConfigField(type = "String", name = "ME_ENDPOINT", value = "\"me\"")
         }
 
         release {
@@ -54,7 +66,7 @@ android {
         }
     }
 
-    buildFeatures{
+    buildFeatures {
         compose = true
         viewBinding = true
         buildConfig = true
