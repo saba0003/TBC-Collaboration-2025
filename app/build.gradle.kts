@@ -27,9 +27,9 @@ android {
     buildTypes {
         debug {
             isMinifyEnabled = true
-            buildConfigField(type = "String", name = "BASE_URL", value = "\"http://34.140.203.230/register/\"")
+            buildConfigField(type = "String", name = "BASE_URL", value = "\"http://35.205.47.8/\"")
             buildConfigField(type = "String", name = "API", value = "\"api/\"")
-            buildConfigField(type = "String", name = "AUTH", value = "\"auth/\"")
+            buildConfigField(type = "String", name = "AUTH", value = "\"Auth/\"")
             buildConfigField(type = "String", name = "REGISTRATIONS", value = "\"registrations/\"")
             buildConfigField(type = "String", name = "EVENT", value = "\"event/\"")
             buildConfigField(type = "String", name = "ANALYTICS", value = "\"analytics/\"")
@@ -42,6 +42,8 @@ android {
             buildConfigField(type = "String", name = "LOGIN_ENDPOINT", value = "\"login\"")
             buildConfigField(type = "String", name = "REGISTER_ENDPOINT", value = "\"register\"")
             buildConfigField(type = "String", name = "ME_ENDPOINT", value = "\"me\"")
+            buildConfigField(type = "String", name = "AUTHORIZATION", value = "\"Authorization\"")
+            buildConfigField(type = "String", name = "BEARER", value = "\"Bearer \"")
         }
 
         release {
