@@ -100,10 +100,12 @@
         android:id="@+id/forgotPasswordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:clickable="true"
         android:focusable="true"
         android:text="@string/forgot_password"
         android:textColor="@android:color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/rememberMeCheckBox"
         app:layout_constraintEnd_toEndOf="@id/passwordEditText"
         app:layout_constraintTop_toTopOf="@id/rememberMeCheckBox" />
