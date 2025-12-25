@@ -5,6 +5,6 @@ sealed class AppError {
     data object NetworkError : AppError()
     data object ApiError : AppError()
     data object StateError : AppError()
-    data class ValidationError(val errors: List<SignUpValidationError>) : AppError()
+    data class ValidationError(val errors: List<com.example.tbc_collaboration_2025.domain.error.ValidationError>) : AppError()
     data object UnknownError : AppError()
 }
