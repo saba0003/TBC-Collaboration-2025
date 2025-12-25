@@ -2,6 +2,7 @@ package com.example.tbc_collaboration_2025.di.modules
 
 import com.example.tbc_collaboration_2025.BuildConfig.BASE_URL
 import com.example.tbc_collaboration_2025.BuildConfig.API
+import com.example.tbc_collaboration_2025.data.remote.util.InstantAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -34,6 +35,7 @@ object NetworkModule {
     @Singleton
     fun provideMoshi(): Moshi =
         Moshi.Builder()
+            .add(InstantAdapter)
             .addLast(KotlinJsonAdapterFactory())
             .build()
 
