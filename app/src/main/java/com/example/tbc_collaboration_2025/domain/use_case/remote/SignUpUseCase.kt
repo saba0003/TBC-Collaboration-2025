@@ -3,8 +3,8 @@ package com.example.tbc_collaboration_2025.domain.use_case
 import com.example.tbc_collaboration_2025.di.qualifiers.RemoteRepository
 import com.example.tbc_collaboration_2025.domain.common.Resource
 import com.example.tbc_collaboration_2025.domain.error.AppError
-import com.example.tbc_collaboration_2025.domain.model.SignUpRequest
-import com.example.tbc_collaboration_2025.domain.model.SignUpResponse
+import com.example.tbc_collaboration_2025.domain.model.request.SignUpRequest
+import com.example.tbc_collaboration_2025.domain.model.response.SignUpResponse
 import com.example.tbc_collaboration_2025.domain.repository.SignUpRepository
 import com.example.tbc_collaboration_2025.domain.util.SignUpValidator
 import kotlinx.coroutines.flow.Flow

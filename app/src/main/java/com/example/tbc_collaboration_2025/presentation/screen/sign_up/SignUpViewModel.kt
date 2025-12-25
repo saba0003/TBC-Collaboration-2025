@@ -17,11 +17,11 @@ class SignUpViewModel @Inject constructor(private val signUpUseCase: SignUpUseCa
 
     override fun onEvent(event: Event): Unit = with(receiver = event) {
         when (this) {
-            is Event.OnFirstNameChanged -> updateState { copy(firstName = firstName) }
-            is Event.OnLastNameChanged -> updateState { copy(lastName = lastName) }
-            is Event.OnEmailChanged -> updateState { copy(email = email) }
-            is Event.OnPasswordChanged -> updateState { copy(password = password) }
-            is Event.OnConfirmPasswordChanged -> updateState { copy(confirmPassword = confirmPassword) }
+            is Event.OnFirstNameChanged -> updateState { copy(firstName = value) }
+            is Event.OnLastNameChanged -> updateState { copy(lastName = value) }
+            is Event.OnEmailChanged -> updateState { copy(email = value) }
+            is Event.OnPasswordChanged -> updateState { copy(password = value) }
+            is Event.OnConfirmPasswordChanged -> updateState { copy(confirmPassword = value) }
             is Event.OnAgreementChanged -> updateState { copy(isAgreed = isChecked) }
             Event.OnSignUpClicked -> onSignUp()
             Event.OnSignInClicked -> onSignIn()
@@ -41,6 +41,7 @@ class SignUpViewModel @Inject constructor(private val signUpUseCase: SignUpUseCa
             signUpUseCase(request = request).collect {
                 when (it) {
                     is Resource.Success -> {
+//                        val sad = it.data.token
                         updateState { copy(isLoading = false) }
                         emitSideEffect(sideEffect = SideEffect.NavigateToEventHub)
                     }

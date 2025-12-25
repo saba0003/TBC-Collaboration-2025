@@ -16,13 +16,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.tbc_collaboration_2025.common.Colors
 import com.example.tbc_collaboration_2025.common.Strings
 import com.example.tbc_collaboration_2025.domain.error.AppError.*
-import com.example.tbc_collaboration_2025.domain.error.SignUpValidationError.*
+import com.example.tbc_collaboration_2025.domain.error.ValidationError.*
 import com.example.tbc_collaboration_2025.databinding.FragmentCreateAccountBinding as Binding
 import com.example.tbc_collaboration_2025.presentation.common.BaseFragment
-import com.example.tbc_collaboration_2025.presentation.extension.launchAndRepeatOnStart
 import com.example.tbc_collaboration_2025.presentation.extension.popMessage
 import com.example.tbc_collaboration_2025.presentation.screen.sign_up.SignUpContract.*
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -32,10 +32,7 @@ class SignUpFragment : BaseFragment<Binding>(inflater = Binding::inflate) {
     private val viewModel: SignUpViewModel by viewModels()
 
 
-    override fun bind() {
-        setupClickableSignInText()
-        collectObservers()
-    }
+    override fun bind() = setupClickableSignInTextView()
 
     override fun listeners() {
         setListenerOnFirstNameEditText()
@@ -47,13 +44,12 @@ class SignUpFragment : BaseFragment<Binding>(inflater = Binding::inflate) {
         setListenerOnCreateAccountButton()
     }
 
-
-    /** ======================================= OBSERVERS ======================================= */
-    private fun collectObservers() = viewLifecycleOwner.launchAndRepeatOnStart {
-        launch { viewModel.state.collect { handleStates(state = it) } }
-        launch { viewModel.sideEffect.collectLatest { handleSideEffects(sideEffect = it) } }
+    override suspend fun collectObservers(): Unit = with(receiver = viewModel) {
+        coroutineScope {
+//            launch { state.collect { handleStates(state = it) } }
+            launch { sideEffect.collectLatest { handleSideEffects(sideEffect = it) } }
+        }
     }
-    /** ========================================================================================= */
 
 
     // TODO: show and hide keyboards can be used here
@@ -92,9 +88,9 @@ class SignUpFragment : BaseFragment<Binding>(inflater = Binding::inflate) {
 
 
     /** ======================================= HANDLERS ======================================== */
-    private fun handleStates(state: State) {
-        binding.createAccountButton.isEnabled = state.isLoading.not()
-    }
+//    private fun handleStates(state: State) {
+//        binding.createAccountButton.isEnabled = state.isLoading.not()
+//    }
 
     private fun handleSideEffects(sideEffect: SideEffect) = with(receiver = binding.root) {
         when (sideEffect) {
@@ -107,9 +103,9 @@ class SignUpFragment : BaseFragment<Binding>(inflater = Binding::inflate) {
                     is ValidationError -> {
                         sideEffect.errorCode.errors.fastJoinToString {
                             when (it) {
+                                FieldEmpty -> ContextCompat.getString(context, Strings.error_empty_fields)
                                 InvalidEmail -> ContextCompat.getString(context, Strings.error_invalid_email)
                                 PasswordTooWeak -> ContextCompat.getString(context, Strings.error_weak_password)
-                                FieldEmpty -> ContextCompat.getString(context, Strings.error_empty_fields)
                             }
                         }
                     }
@@ -117,6 +113,7 @@ class SignUpFragment : BaseFragment<Binding>(inflater = Binding::inflate) {
                 }
                 popMessage(text = error, color = Colors.amaranth)
             }
+
             SideEffect.NavigateToEventHub -> navigateToEventHubScreen()
             SideEffect.NavigateToSignIn -> navigateToSignInScreen()
         }
@@ -124,8 +121,21 @@ class SignUpFragment : BaseFragment<Binding>(inflater = Binding::inflate) {
     /** ========================================================================================= */
 
 
+    /** ====================================== NAVIGATIONS ====================================== */
+    private fun navigateToEventHubScreen() {
+        val direction = SignUpFragmentDirections.actionCreateAccountFragmentToEventHubFragment()
+        findNavController().navigate(directions = direction)
+    }
+
+    private fun navigateToSignInScreen() {
+        val direction = SignUpFragmentDirections.actionCreateAccountFragmentToSignInFragment()
+        findNavController().navigate(directions = direction)
+    }
+    /** ========================================================================================= */
+
+
     /** ========================================== AUX ========================================== */
-    private fun setupClickableSignInText() = with(receiver = binding.signInTextView) {
+    private fun setupClickableSignInTextView(): Unit = with(receiver = binding.signInTextView) {
         val fullText = context.getText(Strings.already_have_an_account_sign_in) as Spanned
         val spannable = SpannableStringBuilder(fullText)
         val annotations = fullText.getSpans(0, fullText.length, Annotation::class.java)
@@ -153,19 +163,10 @@ class SignUpFragment : BaseFragment<Binding>(inflater = Binding::inflate) {
             highlightColor = Color.TRANSPARENT
         }
     }
-
-    private fun navigateToEventHubScreen() {
-        val direction = SignUpFragmentDirections.actionCreateAccountFragmentToEventHubFragment()
-        findNavController().navigate(directions = direction)
-    }
-
-    private fun navigateToSignInScreen() {
-        val direction = SignUpFragmentDirections.actionCreateAccountFragmentToSignInFragment()
-        findNavController().navigate(directions = direction)
-    }
     /** ========================================================================================= */
 
+
     private companion object {
-        private const val ANNOTATION_SIGN_IN = "sign_in"
+        const val ANNOTATION_SIGN_IN = "sign_in"
     }
 }

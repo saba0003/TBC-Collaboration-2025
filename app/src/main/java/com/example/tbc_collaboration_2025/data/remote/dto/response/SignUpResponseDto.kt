@@ -4,10 +4,9 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class SignUpResponseDto(
-    val id: Int,
-    val eventId: Int,
+    val token: String,
     val userId: Int,
-    val status: String,
-    val registeredAt: String,
-    val position: String
+    val fullName: String,
+    val role: String,
+    val expiresAt: String
 )
