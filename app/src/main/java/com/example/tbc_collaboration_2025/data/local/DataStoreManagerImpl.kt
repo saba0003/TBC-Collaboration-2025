@@ -10,7 +10,7 @@ import javax.inject.Inject
 class DataStoreManagerImpl @Inject constructor(private val dataStore: DataStore<Preferences>) :
     DataStoreManager {
 
-    override suspend fun <T> getPreference(key: Preferences.Key<T>, defaultValue: T): Flow<T> =
+    override fun <T> getPreference(key: Preferences.Key<T>, defaultValue: T): Flow<T> =
         dataStore.data.map { it[key] ?: defaultValue }
 
     override suspend fun <T> setPreference(key: Preferences.Key<T>, value: T) {
