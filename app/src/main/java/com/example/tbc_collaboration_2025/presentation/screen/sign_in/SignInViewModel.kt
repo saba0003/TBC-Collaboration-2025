@@ -2,7 +2,7 @@ package com.example.tbc_collaboration_2025.presentation.screen.sign_in
 
 import androidx.lifecycle.viewModelScope
 import com.example.tbc_collaboration_2025.domain.common.Resource
-import com.example.tbc_collaboration_2025.domain.model.DataStoreKeys.USER_TOKEN_PREF
+import com.example.tbc_collaboration_2025.domain.model.DataStoreKeys.TOKEN_KEY
 import com.example.tbc_collaboration_2025.domain.use_case.SignInUseCase
 import com.example.tbc_collaboration_2025.domain.use_case.data_store.SetPreferenceUseCase
 import com.example.tbc_collaboration_2025.presentation.common.BaseViewModel
@@ -40,7 +40,7 @@ class SignInViewModel @Inject constructor(
                 when (it) {
                     is Resource.Success -> {
                         if (rememberMe)
-                            setPreferenceUseCase(key = USER_TOKEN_PREF, value = it.data.token)
+                            setPreferenceUseCase(key = TOKEN_KEY, value = it.data.token)
                         updateState { copy(isLoading = false) }
                         emitSideEffect(sideEffect = SideEffect.NavigateToEventHub)
                     }

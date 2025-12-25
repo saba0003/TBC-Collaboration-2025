@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface UserRepository {
 
-    fun getUser(token: String): Flow<Resource<UserProfileResponse>>
+    fun getUser(): Flow<Resource<UserProfileResponse>>
 
 }

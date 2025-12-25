@@ -1,7 +1,7 @@
 package com.example.tbc_collaboration_2025.presentation.screen.event_hub
 
 import androidx.lifecycle.viewModelScope
-import com.example.tbc_collaboration_2025.domain.model.DataStoreKeys.USER_TOKEN_PREF
+import com.example.tbc_collaboration_2025.domain.model.DataStoreKeys.TOKEN_KEY
 import com.example.tbc_collaboration_2025.domain.use_case.data_store.RemovePreferencesUseCase
 import com.example.tbc_collaboration_2025.presentation.common.BaseViewModel
 import com.example.tbc_collaboration_2025.presentation.screen.event_hub.EventHubContract.*
@@ -21,7 +21,7 @@ class EventHubViewModel @Inject constructor(private val removePreferencesUseCase
 
     private fun onLogout() {
         viewModelScope.launch {
-            removePreferencesUseCase(keys = listOf(USER_TOKEN_PREF))
+            removePreferencesUseCase(keys = listOf(TOKEN_KEY))
             emitSideEffect(sideEffect = SideEffect.NavigateToSignIn)
         }
     }

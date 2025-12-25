@@ -4,7 +4,6 @@ package com.example.tbc_collaboration_2025.domain.model
 import androidx.datastore.preferences.core.stringPreferencesKey
 
 object DataStoreKeys {
-    private const val USER_TOKEN = "user_token"
-
-    val USER_TOKEN_PREF = stringPreferencesKey(name = USER_TOKEN)
+    private const val AUTH_TOKEN = "auth_token"
+    val TOKEN_KEY = stringPreferencesKey(name = AUTH_TOKEN)
 }

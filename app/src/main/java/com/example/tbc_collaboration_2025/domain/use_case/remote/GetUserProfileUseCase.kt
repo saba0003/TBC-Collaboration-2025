@@ -1,4 +1,4 @@
-package com.example.tbc_collaboration_2025.domain.use_case
+package com.example.tbc_collaboration_2025.domain.use_case.remote
 
 import com.example.tbc_collaboration_2025.di.qualifiers.RemoteRepository
 import com.example.tbc_collaboration_2025.domain.common.Resource
@@ -9,7 +9,6 @@ import javax.inject.Inject
 
 class GetUserProfileUseCase @Inject constructor(@param:RemoteRepository private val userRepository: UserRepository) {
 
-    operator fun invoke(token: String): Flow<Resource<UserProfileResponse>> =
-        userRepository.getUser(token = token)
+    operator fun invoke(): Flow<Resource<UserProfileResponse>> = userRepository.getUser()
 
 }

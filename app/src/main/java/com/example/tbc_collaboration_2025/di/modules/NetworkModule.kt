@@ -2,6 +2,7 @@ package com.example.tbc_collaboration_2025.di.modules
 
 import com.example.tbc_collaboration_2025.BuildConfig.BASE_URL
 import com.example.tbc_collaboration_2025.BuildConfig.API
+import com.example.tbc_collaboration_2025.data.local.GetUserInterceptor
 import com.example.tbc_collaboration_2025.data.remote.util.InstantAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -26,10 +27,13 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor) =
-        OkHttpClient.Builder()
-            .addInterceptor(interceptor = loggingInterceptor)
-            .build()
+    fun provideOkHttpClient(
+        getUserInterceptor: GetUserInterceptor,
+        loggingInterceptor: HttpLoggingInterceptor
+    ) = OkHttpClient.Builder()
+        .addInterceptor(interceptor = getUserInterceptor)
+        .addInterceptor(interceptor = loggingInterceptor)
+        .build()
 
     @Provides
     @Singleton

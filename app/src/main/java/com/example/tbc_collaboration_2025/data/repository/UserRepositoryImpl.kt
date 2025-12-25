@@ -1,6 +1,5 @@
 package com.example.tbc_collaboration_2025.data.repository
 
-import com.example.tbc_collaboration_2025.BuildConfig.BEARER
 import com.example.tbc_collaboration_2025.data.remote.common.ResponseHandler
 import com.example.tbc_collaboration_2025.data.remote.mapper.asResource
 import com.example.tbc_collaboration_2025.data.remote.mapper.response.toDomain
@@ -18,8 +17,7 @@ class UserRepositoryImpl @Inject constructor(
     private val responseHandler: ResponseHandler
 ) : UserRepository {
 
-    override fun getUser(token: String): Flow<Resource<UserProfileResponse>> =
-        responseHandler.safeApiCall { fetchService.getUser(token = BEARER.plus(other = token)) }
-            .asResource { it.toDomain() }
+    override fun getUser(): Flow<Resource<UserProfileResponse>> =
+        responseHandler.safeApiCall { fetchService.getUser() }.asResource { it.toDomain() }
 
 }
