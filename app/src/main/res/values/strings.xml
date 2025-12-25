@@ -39,10 +39,10 @@
     <string name="enter_your_email_input_hint">Enter your email</string>
     <string name="enter_your_password_input_hint">Enter your password</string>
     <string name="remember_me">Remember me</string>
-    <string name="forgot_password">Forgot password?</string>
-    <string name="do_not_have_an_account_sign_up">Don\'t have an account? Sign up</string>
+    <string name="forgot_password"><u>Forgot password?</u></string>
+    <string name="do_not_have_an_account_sign_up">Don\'t have an account? <annotation key="action" value="sign_up"><b><u>Sign up</u></b></annotation></string>
     <string name="enter_your_email_and_we_will_send_you_a_link_to_reset_your_password">Enter your email and we\'ll send you a link to reset your password.</string>
     <string name="send_reset_link">Send Reset Link</string>
-    <string name="back_to_sign_in">Back to Sign In</string>
+    <string name="back_to_sign_in"><u>Back to Sign In</u></string>
     <string name="sign_out">Sign out</string>
 </resources>
