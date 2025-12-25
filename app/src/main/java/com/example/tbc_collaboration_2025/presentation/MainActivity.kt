@@ -5,7 +5,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.tbc_collaboration_2025.presentation.screen.splash.SplashState
+import androidx.navigation.fragment.NavHostFragment
+import com.example.tbc_collaboration_2025.R
+import com.example.tbc_collaboration_2025.common.Ids
+import com.example.tbc_collaboration_2025.presentation.extension.launchAndRepeatOnStart
+import com.example.tbc_collaboration_2025.presentation.screen.splash.SplashContract.SideEffect.*
 import com.example.tbc_collaboration_2025.presentation.screen.splash.SplashViewModel
 import com.example.tbc_collaboration_2025.databinding.ActivityMainBinding as Binding
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +28,26 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge() // for jetpack compose, this line should be placed before super.onCreate and setContent
         _binding = Binding.inflate(layoutInflater)
         setContentView(view = binding.root)
-        splashScreen.setKeepOnScreenCondition { viewModel.state.value is SplashState.Loading }
+        splashScreen.setKeepOnScreenCondition { viewModel.state.value.isLoading }
+        setupNavigation()
+    }
+
+    private fun setupNavigation() {
+        launchAndRepeatOnStart {
+            viewModel.sideEffect.collect { sideEffect ->
+                val navHostFragment = supportFragmentManager
+                    .findFragmentById(Ids.navHostFragment) as NavHostFragment
+                val navController = navHostFragment.navController
+                val navGraph = navController.navInflater.inflate(graphResId = R.navigation.nav_graph)
+
+                when (sideEffect) {
+                    NavigateToEventHub -> navGraph.setStartDestination(Ids.eventHubFragment)
+                    NavigateToSignUp -> navGraph.setStartDestination(Ids.createAccountFragment)
+                }
+
+                navController.graph = navGraph
+            }
+        }
     }
 
     override fun onDestroy() {
